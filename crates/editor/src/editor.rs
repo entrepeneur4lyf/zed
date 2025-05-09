@@ -8813,8 +8813,10 @@ impl Editor {
                             row_delta = suggested_indent.len - cursor.column;
                         } else {
                             row_delta = suggested_indent.len - current_indent.len;
-                            continue;
                         }
+                    }
+                    if !is_any_cursor_at_word_boundary {
+                        continue;
                     }
                 }
             }
